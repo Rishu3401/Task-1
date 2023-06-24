@@ -1,0 +1,277 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box11 {
+  flex-basis: 5%;
+  background: linear-gradient(white 60%, #008080 40%);
+}
+
+.box22 {
+  flex-basis: 95%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row1 {
+  flex-basis: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.text-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center; 
+}
+
+.name {
+  margin: 0;
+  font-weight: bold;
+}
+
+.datetime {
+  font-size: 12px;
+  color: gray;
+}
+
+.row2 {
+  flex-basis: 31px;
+  display: flex;
+}
+
+.row21 {
+  flex-grow: 1;
+  background-color: #008080;
+}
+
+.row21 {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex-grow: 1;
+  border-radius: 0;
+}
+
+.row21.selected {
+  background-color: rgba(255, 255, 255, 0);
+  color: black;
+  border-radius: 10%;
+}
+
+.stock {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.stockbox {
+
+  display: flex;
+  padding-bottom: 10px;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1 1;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none; 
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0),  0 -8px 8px -4px rgba(0, 0, 0, 0.5) inset;
+}
+
+.stockbox.selected {
+  background-color: skyblue;
+}
+
+.stockbox:not(:last-child) {
+  border-right: 1px solid blue; 
+}
+
+.stockbox img {
+  margin-bottom: 2px;
+}
+
+.mainpage {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+
+.mainbox1 {
+  border: 9px ridge #0b767e;
+  margin-right: 3px;
+  margin-left: 3px;
+  height: 65px;
+  color: white;
+  font-weight: bold;
+  width: 180px;
+  text-align: center;
+  transform-style:preserve-3d;
+  background-color: #008080;
+  box-shadow: 1px 3px 8px 2px rgba(0, 0, 0, 0.7),inset 3px -2px 18px 0px rgba(0, 0, 0, 0.637) ,
+  inset -16px -18px 18px 0px rgba(0, 0, 0, 0.3); 
+}
+
+.mainbox {
+  position: relative;
+  border: none;
+  margin-bottom: 5px;
+  margin-left: 3px;
+  margin-right: 4px;
+  height: 81px;
+  width: 225px;
+  text-align: center;
+  box-shadow:  0 2px 2px 2px rgba(0, 0, 0, 0.3);
+  color: blue;
+}
+
+.mainbox .logo {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  width: 25px;
+  height: 25px;
+}
+
+.Taskbar {
+  border: 1px solid black;
+  height: 100%;
+}
+
+.box11 img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .box11 {
+    flex-basis: 100%;
+  }
+
+  .box22 {
+    flex-basis: 100%;
+  }
+
+  .stock {
+    overflow-x: auto;
+  }
+
+  .mainpage {
+    flex-direction: column;
+  }
+
+  .mainbox1,
+  .mainbox {
+    width: 100%;
+  }
+
+  .stockbox:not(:last-child) {
+    border-right: none; 
+  }
+
+  .stockbox {
+    flex-basis: 50%; 
+  }
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box {
+  flex: 1 1;
+  height: 19px;
+  background-color: #008080;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  padding: 10px 25px;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  transform: translateZ(0);
+  border: 10px inset #008080;
+}
+
+.box:before {
+  content: "";
+  position: absolute;
+  top: -6pt;
+  left: -6pt;
+  right: -6pt;
+  bottom: -6pt;
+  box-shadow: 0 6pt 12pt rgba(0, 0, 0, 0.5) inset;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.box:hover {
+  transform: translateZ(6pt);
+  box-shadow: 0 -6pt 12pt rgba(0, 0, 0, 0.5) inset;
+}
+
+.box img {
+  max-width: calc(100% - 3px);
+  max-height: calc(100% - 2px);
+}
+
+.box:not(:last-child) {
+  margin-right: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
